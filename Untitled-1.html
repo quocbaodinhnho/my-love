@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gửi em yêu 💖</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to bottom, #ffe0e9, #fff0f5);
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+    }
+
+    .center-box {
+      text-align: center;
+      padding-top: 15vh;
+      color: #d6336c;
+    }
+
+    h1 {
+      font-size: 3em;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    p {
+      font-size: 1.5em;
+      margin: 20px;
+      color: #5c2a4d;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: pink;
+      transform: rotate(45deg);
+      animation: float 8s linear infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: pink;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #ff69b4;
+      }
+      to {
+        text-shadow: 0 0 20px #ff1493;
+      }
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="center-box">
+    <h1>Gửi em yêu 💖</h1>
+    <p>
+      Anh không biết bắt đầu từ đâu để diễn tả hết những gì anh cảm thấy dành cho em. Em đến như một làn gió dịu nhẹ, thổi vào cuộc đời anh sự ấm áp mà bấy lâu anh chẳng ngờ tới. Em cười – và thế giới trong anh bỗng yên bình hơn. Em nói – và trái tim anh lặng im lắng nghe từng nhịp. Có thể đối với người khác, em chỉ là một cô gái bình thường, nhưng với anh, em là cả một vũ trụ dịu dàng mà anh muốn được chạm tới mỗi ngày.
+
+Anh biết tình yêu không phải lúc nào cũng ngọt ngào và dễ dàng. Sẽ có lúc giận dỗi, hiểu lầm, và đôi khi là những im lặng khó nói thành lời. Nhưng chính vì yêu em, anh mới học cách trưởng thành, học cách lắng nghe và quan tâm nhiều hơn. Em chính là động lực để anh cố gắng mỗi ngày, là giấc mơ đẹp mà anh chẳng bao giờ muốn tỉnh giấc.
+
+Có thể anh không hoàn hảo, không giàu có, không giỏi giang như ai khác. Nhưng anh chắc chắn một điều – tình yêu anh dành cho em là thật lòng, là duy nhất, và là mãi mãi. Chỉ cần em ở đây, bên cạnh anh, thì dù thế giới ngoài kia có xoay vần ra sao, anh vẫn sẽ nắm tay em thật chặt, không buông.
+
+Cảm ơn em – vì đã đến, vì đã ở lại, và vì đã khiến anh biết thế nào là yêu một người bằng cả trái tim.
+
+Anh yêu em. Rất nhiều. Mãi mãi.🥰
+    </p>
+  </div>
+
+  <!-- Nhạc nền -->
+  <audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Hiệu ứng trái tim -->
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 5 + 5) + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => {
+        heart.remove();
+      }, 8000);
+    }
+    setInterval(createHeart, 300);
+  </script>
+</body>
+</html>
